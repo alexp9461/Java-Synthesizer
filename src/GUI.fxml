@@ -1,0 +1,499 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXSlider?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.SpinnerValueFactory.IntegerSpinnerValueFactory?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<GridPane fx:id="backGround" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="255.0" minWidth="10.0" prefWidth="239.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="255.0" minWidth="10.0" prefWidth="239.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="255.0" minWidth="10.0" prefWidth="239.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <BorderPane style="-fx-border-color: black;">
+         <top>
+            <Label alignment="TOP_CENTER" style="-fx-border-color: grey;" text="OSC 1" BorderPane.alignment="CENTER" />
+         </top>
+         <right>
+            <HBox fillHeight="false" spacing="15.0" BorderPane.alignment="CENTER_LEFT">
+               <children>
+                  <VBox alignment="TOP_CENTER">
+                     <children>
+                        <JFXSlider fx:id="osc1CentSlider" max="10.0" maxHeight="-Infinity" min="-10.0" minHeight="-Infinity" onMouseDragged="#osc1Cent" onMouseReleased="#osc1Cent" orientation="VERTICAL" prefHeight="80.0" value="-0.0" />
+                        <Label alignment="CENTER" contentDisplay="CENTER" text="Tune" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="TOP_CENTER">
+                     <children>
+                        <JFXSlider fx:id="osc1Vol" blockIncrement="0.1" max="1.0" maxHeight="-Infinity" minHeight="-Infinity" onMouseDragged="#osc1Vol" onMouseReleased="#osc1Vol" orientation="VERTICAL" prefHeight="80.0" value="1.0" />
+                        <Label text="Vol" />
+                     </children>
+                  </VBox>
+               </children>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+               <padding>
+                  <Insets right="20.0" top="19.0" />
+               </padding>
+            </HBox>
+         </right>
+         <center>
+            <VBox spacing="3.0" BorderPane.alignment="CENTER_LEFT">
+               <BorderPane.margin>
+                  <Insets left="10.0" />
+               </BorderPane.margin>
+               <children>
+                  <Pane fx:id="osc1Pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="140.0" scaleShape="false" style="-fx-background-color: black; -fx-border-color: black; -fx-border-width: 2;">
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </Pane>
+                  <HBox alignment="CENTER_LEFT" spacing="5.0">
+                     <children>
+                        <Label alignment="CENTER" text="Oct">
+                           <HBox.margin>
+                              <Insets bottom="4.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Spinner fx:id="osc1Octave" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#osc1Octave" prefWidth="60.0">
+                        		<valueFactory>
+                   				 <SpinnerValueFactory.IntegerSpinnerValueFactory initialValue="0" max="3" min="-3" />
+                  			</valueFactory>
+                           <HBox.margin>
+                              <Insets bottom="4.0" />
+                           </HBox.margin>
+                        </Spinner>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </center>
+      </BorderPane>
+      <BorderPane style="-fx-border-color: black;" GridPane.rowIndex="1">
+         <top>
+            <Label contentDisplay="CENTER" text="OSC 2" BorderPane.alignment="CENTER" />
+         </top>
+         <center>
+            <VBox spacing="3.0" BorderPane.alignment="CENTER_LEFT">
+               <BorderPane.margin>
+                  <Insets left="10.0" />
+               </BorderPane.margin>
+               <children>
+                  <Pane fx:id="osc2Pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="140.0" scaleShape="false" style="-fx-background-color: black; -fx-border-color: black; -fx-border-width: 2;">
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </Pane>
+                  <HBox alignment="CENTER_LEFT" spacing="5.0">
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" text="Oct">
+                           <HBox.margin>
+                              <Insets bottom="4.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Spinner fx:id="osc2Octave" focusTraversable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#osc2Octave" prefWidth="60.0">
+                        	<valueFactory>
+                   				 <SpinnerValueFactory.IntegerSpinnerValueFactory initialValue="0" max="3" min="-3" />
+                  			</valueFactory>
+                           <HBox.margin>
+                              <Insets bottom="4.0" />
+                           </HBox.margin>
+                        </Spinner>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </center>
+         <right>
+            <HBox fillHeight="false" spacing="15.0" BorderPane.alignment="CENTER_LEFT">
+               <children>
+                  <VBox alignment="TOP_CENTER">
+                     <children>
+                        <JFXSlider fx:id="osc2CentSlider" max="10.0" maxHeight="-Infinity" min="-10.0" minHeight="-Infinity" onMouseDragged="#osc2Cent" onMouseReleased="#osc2Cent" orientation="VERTICAL" prefHeight="80.0" value="-0.0" />
+                        <Label alignment="CENTER" contentDisplay="CENTER" text="Tune" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="TOP_CENTER">
+                     <children>
+                        <JFXSlider fx:id="osc2Vol" blockIncrement="0.1" max="1.0" maxHeight="-Infinity" minHeight="-Infinity" onMouseDragged="#osc2Vol" onMouseReleased="#osc2Vol" orientation="VERTICAL" prefHeight="80.0" value="-0.0" />
+                        <Label text="Vol" />
+                     </children>
+                  </VBox>
+               </children>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+               <padding>
+                  <Insets right="20.0" top="19.0" />
+               </padding>
+            </HBox>
+         </right>
+      </BorderPane>
+      <BorderPane style="-fx-border-color: black;" GridPane.columnIndex="1">
+         <top>
+            <Label alignment="CENTER" contentDisplay="CENTER" text="Envelope" BorderPane.alignment="CENTER" />
+         </top>
+         <center>
+            <Pane fx:id="envPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="140.0" scaleShape="false" style="-fx-background-color: black; -fx-border-color: black; -fx-border-width: 2;" BorderPane.alignment="CENTER_LEFT">
+               <BorderPane.margin>
+                  <Insets bottom="25.0" left="10.0" />
+               </BorderPane.margin></Pane>
+         </center>
+         <right>
+            <HBox alignment="CENTER" fillHeight="false" spacing="2.0" BorderPane.alignment="CENTER_LEFT">
+               <children>
+                  <VBox alignment="CENTER">
+                     <children>
+                        <JFXSlider fx:id="env1AttackTSlider" max="1.0" maxHeight="-Infinity" minHeight="-Infinity" onMouseDragged="#env1A" onMouseReleased="#env1A" orientation="VERTICAL" prefHeight="80.0" value="-0.0" />
+                        <Label text="A" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER">
+                     <children>
+                        <JFXSlider fx:id="env1DecaySlider" max="1.0" maxHeight="-Infinity" minHeight="-Infinity" onMouseDragged="#env1D" onMouseReleased="#env1D" orientation="VERTICAL" prefHeight="80.0" value="-0.0" />
+                        <Label text="D" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER">
+                     <children>
+                        <JFXSlider fx:id="env1SustainSlider" max="1.0" maxHeight="-Infinity" minHeight="-Infinity" onMouseDragged="#env1S" onMouseReleased="#env1S" orientation="VERTICAL" prefHeight="80.0" />
+                        <Label text="S" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER">
+                     <children>
+                        <JFXSlider fx:id="env1ReleaseSlider" max="1.0" maxHeight="-Infinity" minHeight="-Infinity" onMouseDragged="#env1R" onMouseReleased="#env1R" orientation="VERTICAL" prefHeight="80.0" value="-0.0" />
+                        <Label text="R" />
+                     </children>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets right="10.0" top="19.0" />
+               </padding>
+               <BorderPane.margin>
+                  <Insets bottom="25.0" />
+               </BorderPane.margin>
+            </HBox>
+         </right>
+      </BorderPane>
+      <BorderPane style="-fx-border-color: black;" GridPane.columnIndex="2">
+         <top>
+            <Label text="Filter" BorderPane.alignment="CENTER" />
+         </top>
+         <center>
+            <Pane fx:id="filterPane" blendMode="SRC_ATOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="140.0" scaleShape="false" style="-fx-background-color: black; -fx-border-color: black; -fx-border-width: 2;" BorderPane.alignment="CENTER_LEFT">
+               <BorderPane.margin>
+                  <Insets bottom="27.0" left="10.0" />
+               </BorderPane.margin></Pane>
+         </center>
+         <right>
+            <HBox spacing="2.0" BorderPane.alignment="CENTER">
+               <children>
+                  <VBox>
+                     <children>
+                        <JFXSlider fx:id="cutoffSlider" indicatorPosition="RIGHT" max="27.1441762" maxHeight="-Infinity" minHeight="-Infinity" onMouseDragged="#setCutoff" onMouseReleased="#setCutoff" orientation="VERTICAL" prefHeight="80.0">
+                           <padding>
+                              <Insets right="30.0" />
+                           </padding>
+                        </JFXSlider>
+                        <Label alignment="TOP_RIGHT" contentDisplay="RIGHT" text="Cutoff" />
+                        <Label fx:id="filterCutoffLabel" text="20000" />
+                     </children>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets right="20.0" top="19.0" />
+               </padding>
+            </HBox>
+         </right>
+      </BorderPane>
+      <BorderPane style="-fx-border-color: black;" GridPane.columnIndex="2" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets />
+         </GridPane.margin>
+         <center>
+            <VBox alignment="TOP_CENTER" prefHeight="110.0" prefWidth="240.0" spacing="5.0">
+               <children>
+                  <HBox alignment="TOP_CENTER" fillHeight="false" spacing="15.0">
+                     <children>
+                        <JFXButton fx:id="subButton" maxWidth="-Infinity" minWidth="-Infinity" onAction="#loadSub" prefWidth="70.0" text="Sub" />
+                        <JFXButton fx:id="reeceButton" maxWidth="-Infinity" minWidth="-Infinity" onAction="#loadReece" prefWidth="70.0" text="Reece" />
+                        <JFXButton fx:id="leadButton" maxWidth="-Infinity" minWidth="-Infinity" onAction="#loadLead" prefWidth="70.0" text="Lead" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="TOP_CENTER" fillHeight="false" prefHeight="100.0" prefWidth="200.0" spacing="15.0">
+                     <children>
+                        <JFXButton fx:id="wobbleButton" maxWidth="-Infinity" minWidth="-Infinity" onAction="#loadWobble" prefWidth="70.0" text="Wobble" />
+                        <JFXButton fx:id="heliButton" maxWidth="-Infinity" minWidth="-Infinity" onAction="#loadHeli" prefWidth="70.0" text="Helicopter" />
+                        <JFXButton fx:id="squaresButton" onAction="#loadSquares" text="Squares" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </center>
+         <top>
+            <Label text="Presets" BorderPane.alignment="CENTER" />
+         </top>
+         <bottom>
+            <VBox alignment="TOP_CENTER" spacing="5.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label text="FX" />
+                  <JFXButton fx:id="distortionButton" onAction="#distortionToggle" text="Distortion" />
+               </children>
+               <padding>
+                  <Insets bottom="15.0" />
+               </padding>
+            </VBox>
+         </bottom>
+      </BorderPane>
+      <BorderPane style="-fx-border-color: black;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <top>
+            <Label text="Envelope 2" BorderPane.alignment="CENTER" />
+         </top>
+         <center>
+            <VBox spacing="3.0" BorderPane.alignment="CENTER_LEFT">
+               <BorderPane.margin>
+                  <Insets left="10.0" />
+               </BorderPane.margin>
+               <children>
+                  <Pane fx:id="envPane2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="140.0" scaleShape="false" style="-fx-background-color: black; -fx-border-color: black; -fx-border-width: 2;">
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin></Pane>
+                  <JFXComboBox fx:id="env2Box" focusColor="BLACK" focusTraversable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#connectEnv2" prefHeight="26.0" prefWidth="140.0" unFocusColor="BLACK">
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor>
+                  </JFXComboBox>
+               </children>
+            </VBox>
+         </center>
+         <right>
+            <HBox alignment="CENTER" fillHeight="false" spacing="2.0">
+               <children>
+                  <VBox alignment="CENTER">
+                     <children>
+                        <JFXSlider fx:id="env2AttackSlider" max="1.0" maxHeight="-Infinity" minHeight="-Infinity" onMouseDragged="#env2A" onMouseReleased="#env2A" orientation="VERTICAL" prefHeight="80.0" value="-0.0" />
+                        <Label text="A" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER">
+                     <children>
+                        <JFXSlider fx:id="env2DecaySlider" max="1.0" maxHeight="-Infinity" minHeight="-Infinity" onMouseDragged="#env2D" onMouseReleased="#env2D" orientation="VERTICAL" prefHeight="80.0" value="-0.0" />
+                        <Label text="D" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER">
+                     <children>
+                        <JFXSlider fx:id="env2SustainSlider" max="1.0" maxHeight="-Infinity" minHeight="-Infinity" onMouseDragged="#env2S" onMouseReleased="#env2S" orientation="VERTICAL" prefHeight="80.0" />
+                        <Label text="S" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER">
+                     <children>
+                        <JFXSlider fx:id="env2ReleaseSlider" max="1.0" maxHeight="-Infinity" minHeight="-Infinity" onMouseDragged="#env2R" onMouseReleased="#env2R" orientation="VERTICAL" prefHeight="80.0" value="-0.0" />
+                        <Label text="R" />
+                     </children>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets right="10.0" />
+               </padding>
+               <BorderPane.margin>
+                  <Insets bottom="10.0" />
+               </BorderPane.margin>
+            </HBox>
+         </right>
+         <bottom>
+            <Pane BorderPane.alignment="CENTER_LEFT">
+               <BorderPane.margin>
+                  <Insets left="10.0" />
+               </BorderPane.margin>
+               <padding>
+                  <Insets bottom="2.0" />
+               </padding>
+            </Pane>
+         </bottom>
+         <padding>
+            <Insets bottom="1.0" />
+         </padding>
+      </BorderPane>
+      <BorderPane style="-fx-border-color: black;" GridPane.rowIndex="2">
+         <top>
+            <Label text="WaveOsc" BorderPane.alignment="CENTER" />
+         </top>
+         <right>
+            <VBox alignment="TOP_CENTER" BorderPane.alignment="CENTER">
+               <children>
+                  <JFXSlider fx:id="waveOsc1Vol" max="1.0" maxHeight="-Infinity" minHeight="-Infinity" onMouseDragged="#waveOsc1Vol" onMouseReleased="#waveOsc1Vol" orientation="VERTICAL" prefHeight="80.0" value="-0.0" />
+                  <Label text="Vol" />
+               </children>
+               <padding>
+                  <Insets right="40.0" />
+               </padding>
+            </VBox>
+         </right>
+         <center>
+            <VBox spacing="3.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Pane fx:id="wavePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="140.0" scaleShape="false">
+                     <children>
+                        <JFXButton fx:id="waveButton" layoutX="19.0" layoutY="27.0" onAction="#waveChooser" text="Choose Wave" />
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </Pane>
+                  <HBox alignment="CENTER_LEFT" spacing="5.0">
+                     <children>
+                        <Label text="Oct">
+                           <HBox.margin>
+                              <Insets bottom="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Spinner fx:id="waveOsc1Octave" focusTraversable="false" maxWidth="-Infinity" minWidth="-Infinity" onMouseClicked="#waveOsc1Octave" prefWidth="60.0">
+                        		<valueFactory>
+                   				 <SpinnerValueFactory.IntegerSpinnerValueFactory initialValue="0" max="3" min="-3" />
+                  			</valueFactory>
+                           <HBox.margin>
+                              <Insets bottom="5.0" />
+                           </HBox.margin>
+                        </Spinner>
+                     </children>
+                  </HBox>
+               </children>
+               <BorderPane.margin>
+                  <Insets left="10.0" />
+               </BorderPane.margin>
+            </VBox>
+         </center>
+      </BorderPane>
+      <BorderPane style="-fx-border-color: black;" GridPane.columnIndex="1" GridPane.rowIndex="2">
+         <center>
+            <VBox spacing="3.0" BorderPane.alignment="CENTER_LEFT">
+               <BorderPane.margin>
+                  <Insets left="10.0" />
+               </BorderPane.margin>
+               <children>
+                  <Pane fx:id="LFOPane1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="140.0" scaleShape="false" style="-fx-background-color: black; -fx-border-color: black; -fx-border-width: 2;">
+                     <VBox.margin>
+                        <Insets top="24.0" />
+                     </VBox.margin>
+                  </Pane>
+                  <JFXComboBox fx:id="LFOConnect" focusColor="BLACK" focusTraversable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#ConnectLFO1" prefHeight="26.0" prefWidth="140.0" />
+               </children>
+            </VBox>
+         </center>
+         <right>
+            <HBox BorderPane.alignment="CENTER_LEFT">
+               <children>
+                  <VBox alignment="CENTER" spacing="2.0">
+                     <children>
+                        <JFXSlider fx:id="LFO1SpeedSlider" max="15.0" maxHeight="-Infinity" minHeight="-Infinity" onMouseDragged="#LFO1SetSpeed" onMouseReleased="#LFO1SetSpeed" orientation="VERTICAL" prefHeight="80.0" value="-1.0" />
+                        <Label text="Speed" />
+                     </children>
+                     <HBox.margin>
+                        <Insets bottom="20.0" />
+                     </HBox.margin>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets right="30.0" top="19.0" />
+               </padding>
+            </HBox>
+         </right>
+         <top>
+            <Label text="LFO" BorderPane.alignment="CENTER" />
+         </top>
+         <bottom>
+            <Pane BorderPane.alignment="CENTER_LEFT">
+               <BorderPane.margin>
+                  <Insets left="10.0" />
+               </BorderPane.margin>
+            </Pane>
+         </bottom>
+      </BorderPane>
+      <BorderPane style="-fx-border-color: black;" GridPane.columnIndex="2" GridPane.rowIndex="2">
+         <center>
+            <Pane>
+               <children>
+                  <HBox alignment="CENTER_LEFT" layoutX="23.0" spacing="20.0">
+                     <children>
+                        <VBox alignment="TOP_CENTER">
+                           <children>
+                              <Label alignment="CENTER" contentDisplay="CENTER" text="Low" />
+                              <HBox spacing="10.0" style="-fx-border-color: black;">
+                                 <children>
+                                    <VBox alignment="TOP_CENTER">
+                                       <children>
+                                          <JFXSlider fx:id="eqLowGain" max="1.5" maxHeight="-Infinity" min="0.5" minHeight="-Infinity" onMouseDragged="#eqSetLowGain" onMouseReleased="#eqSetLowGain" orientation="VERTICAL" prefHeight="100.0" value="1.0" />
+                                          <Label text="Gain" />
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="TOP_CENTER">
+                                       <children>
+                                          <JFXSlider fx:id="eqLowFreq" maxHeight="-Infinity" minHeight="-Infinity" onMouseDragged="#eqSetLowFreq" onMouseReleased="#eqSetLowFreq" orientation="VERTICAL" prefHeight="100.0" />
+                                          <Label text="Freq" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <VBox alignment="TOP_CENTER">
+                           <children>
+                              <Label text="High" />
+                              <HBox spacing="10.0" style="-fx-border-color: black;">
+                                 <children>
+                                    <VBox alignment="TOP_CENTER">
+                                       <children>
+                                          <JFXSlider fx:id="eqHighGain" max="1.5" maxHeight="-Infinity" min="0.5" minHeight="-Infinity" onMouseDragged="#eqSetHighGain" onMouseReleased="#eqSetHighGain" orientation="VERTICAL" prefHeight="100.0" value="1.0" />
+                                          <Label text="Gain" />
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="TOP_CENTER">
+                                       <children>
+                                          <JFXSlider fx:id="eqHighFreq" maxHeight="-Infinity" minHeight="-Infinity" orientation="VERTICAL" prefHeight="100.0" />
+                                          <Label text="Freq" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <VBox alignment="TOP_CENTER">
+                           <children>
+                              <Label text="Main" />
+                              <JFXSlider fx:id="mainVolSlider" blockIncrement="0.1" max="1.0" maxHeight="-Infinity" minHeight="-Infinity" onMouseDragged="#mainVolume" onMouseReleased="#mainVolume" orientation="VERTICAL" prefHeight="100.0" value="1.0" />
+                              <Label text="Vol" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children></Pane>
+         </center>
+         <top>
+            <Label text="Main" BorderPane.alignment="CENTER" />
+         </top>
+      </BorderPane>
+   </children>
+</GridPane>

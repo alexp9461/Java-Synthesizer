@@ -1,0 +1,92 @@
+.root{
+	-fx-background-color: #383838;
+	-fx-border-color: black;
+}
+
+.button { 
+   -fx-background-color: #1E90FF; 
+   -fx-text-fill: white; 
+}
+
+.label {
+	-fx-text-fill: white;
+}
+
+.slider .track{
+	-fx-background-color: #1E90FF;
+}
+
+.slider .thumb{
+	-fx-background-color: white;
+	-fx-pref-height: 3;
+    -fx-pref-width: 8;
+}
+
+.jfx-slider > .track {
+     -fx-background-color: black;
+     -fx-pref-width:20;
+     -fx-background-radius: 1,1,1,1;
+}
+.jfx-slider > .thumb {
+     -fx-background-color: #1E90FF;
+     -fx-pref-width: 20;
+     -fx-pref-height: 2;
+     -fx-background-radius: 1,1,1,1;
+}
+.jfx-slider > .colored-track {
+     -fx-background-color: #1E90FF;
+     -fx-background-radius: 1,1,1,1;
+}
+.jfx-slider > .animated-thumb {
+     -fx-background-color: #1E90FF;
+}
+.jfx-slider .slider-value {
+     -fx-fill: black;
+     -fx-stroke: white;
+}
+.polyline{
+	-fx-stroke: #1E90FF;
+	-fx-stroke-width: 10;
+}
+.pane{
+	-fx-background-color: black;
+	-fx-border-color: black;    
+}
+
+.pane{
+	-fx-background-color: black;
+}
+.spinner .increment-arrow-button,
+.spinner .decrement-arrow-button {
+    -fx-body-color: #383838;
+    -fx-background-color: black;
+}
+.spinner .text-field{
+	-fx-background-color: black;
+	-fx-text-fill: white;
+}
+.jfx-combo-box {
+	-fx-text-fill: white;
+	-fx-background-color: black;
+}
+
+.combo-box .list-view .list-cell 
+{
+	-fx-focus-color: #1E90FF;
+    -fx-background-color: #383838;
+    -fx-text-fill: white;
+}
+.combo-box-popup > .list-view > .virtual-flow > .clipped-container > .sheet > .list-cell:filled:hover,
+.combo-box-popup > .list-view > .virtual-flow > .clipped-container > .sheet > .list-cell:filled:selected:hover {
+    -fx-background-color: #1E90FF;
+}
+.combo-box .list-cell{
+	-fx-text-fill: white;
+}
+.menu-item:focused{
+	-fx-background-color: #1E90FF;
+}
+.context-menu{
+	-fx-border-color: white;
+}
+
